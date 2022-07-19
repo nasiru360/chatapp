@@ -71,7 +71,7 @@ useEffect(()=>{
     <div className="App" >
 
 <table align='center' style={{ position:'fixed',left:300, bottom:'0',width: '350px', height:'90px',
-  textAlign: 'center', backgroundColor:'green'}}>
+  textAlign: 'center', backgroundColor:'green', padding:'15px'}}>
 <tr><td><b>Message</b></td></tr>
 {history!=null ? <div >
     {history.map((kii,index)=>(
@@ -87,7 +87,7 @@ useEffect(()=>{
        </> : <>
 
 
-       <input type='text'   onChange={(e)=> setMessage(e.target.value)}  /> 
+       <input type='text'  style={{height:'50px', width:'250px'}}  onChange={(e)=> setMessage(e.target.value)}  /> 
       
       <button onClick={sendmessage}>Send</button>
     
