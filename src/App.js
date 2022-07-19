@@ -12,7 +12,7 @@ function App() {
   const chathistory={}
   const [uname,setUname]=React.useState("")
   const [message,setMessage]=React.useState("")
-  const [history,setHistory]=React.useState([])
+  const [history,setHistory]=React.useState("")
 
     
 
@@ -77,7 +77,7 @@ React.useEffect(()=>{
   //   console.log("Record",dis)
   //  ))
   setHistory(projectlist)
- console.log("bili", projectlist)
+ console.log("bili", history)
  
 },[message])
 
@@ -97,7 +97,7 @@ React.useEffect(()=>{
       <button onClick={sendmessage}>Send message</button>
     
        </>}
-
+   
      </div>
   );
 }
