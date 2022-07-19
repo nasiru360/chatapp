@@ -68,10 +68,10 @@ useEffect(()=>{
 
 
   return (
-    <div className="App" >
+    <div className="App" style={{ backgroundColor: 'lightblue', width:'410px', height: 410,
+    overflow: 'scroll',  position: 'fixed', padding:'10px 10px 0px 10px',bottom:0}}>
 
-<table align='center' style={{ position:'fixed',left:300, bottom:'0',width: '350px', height:'90px',
-  textAlign: 'center', backgroundColor:'green', padding:'15px'}}>
+<table align='center' >
 <tr><td><b>Message</b></td></tr>
 {history!=null ? <div >
     {history.map((kii,index)=>(
@@ -81,13 +81,13 @@ useEffect(()=>{
 }
 
 {/* ewef */}
-   <tr><td>  {jabi==null ? <>Input your name:<input type='text'   onChange={(e)=> setUname(e.target.value)}  /> 
+   <tr><td style={{ position: 'fixed',bottom:0}}>  {jabi==null ? <>Input your name:<input type='text'   onChange={(e)=> setUname(e.target.value)}  /> 
       
       <button onClick={savename}>Save</button>
        </> : <>
 
 
-       <input type='text'  style={{height:'50px', width:'250px'}}  onChange={(e)=> setMessage(e.target.value)}  /> 
+       <input type='text'  style={{height:'50px', width:'250px', float:'left'}}  onChange={(e)=> setMessage(e.target.value)}  /> 
       
       <button onClick={sendmessage}>Send</button>
     
