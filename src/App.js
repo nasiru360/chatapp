@@ -57,7 +57,7 @@ useEffect(()=>{
   //  ))
   setHistory(projectlist)
  console.log("bili", history)
- 
+ setChecker(0)
 },[checker])
 
 
