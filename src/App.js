@@ -67,7 +67,7 @@ useEffect(()=>{
   return (
     <div className="App">
 
-<table>
+<table align='center'>
 <tr><td><b>S/no</b></td><td><b>Message</b></td></tr>
 {history!=null ? <>
     {history.map((kii,index)=>(
