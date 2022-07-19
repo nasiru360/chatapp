@@ -2,6 +2,7 @@ import './App.css';
 import {useState,useEffect} from 'react';
 import { useSelector,useDispatch } from "react-redux";
 import setAction from './Action'
+import imgj from './image/person1.png'
 
 
 function App() {
@@ -67,20 +68,20 @@ useEffect(()=>{
 
 
   return (
-    <div className="App" style={{ width:"410px",  height: "310px",overflow: "scroll",
-     position: 'fixed', left:0,bottom: 0, width: '100%',textAlign:'center'}}>
+    <div className="App" >
 
-<table align='center'>
-<tr><td><b>S/no</b></td><td><b>Message</b></td></tr>
-{history!=null ? <>
+<table align='center' style={{ position:'fixed',left:300, bottom:'0',width: '350px', height:'90px',
+  textAlign: 'center', backgroundColor:'green'}}>
+<tr><td><b>Message</b></td></tr>
+{history!=null ? <div >
     {history.map((kii,index)=>(
  
-   <tr><td>{index  + 1}</td><td><b>{namec}:</b><>{kii.newmessage}</></td></tr>   
-    ))}</> : ""  
+   <tr><td><b><img src={imgj}  style={{width:'50px', height:'50px', padding:'15px'}}/></b><>{kii.newmessage}</></td></tr>   
+    ))}</div> : ""  
 }
 
 {/* ewef */}
-   <tr><td></td><td>  {jabi==null ? <>Input your name:<input type='text'   onChange={(e)=> setUname(e.target.value)}  /> 
+   <tr><td>  {jabi==null ? <>Input your name:<input type='text'   onChange={(e)=> setUname(e.target.value)}  /> 
       
       <button onClick={savename}>Save</button>
        </> : <>
