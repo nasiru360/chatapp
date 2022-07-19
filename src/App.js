@@ -14,7 +14,7 @@ function App() {
   const [message,setMessage]=useState("")
   const [history,setHistory]=useState([])
   const [checker,setChecker]=useState(0)
-  const [name,setName]=useState("")
+  const [namec,setNamec]=useState("")
 
     
 
@@ -23,8 +23,6 @@ function App() {
      // alert(uname)
     localStorage.setItem("user",uname)
 
-    var name1=localStorage.getItem("user")
-    setName(name1)
   // const kas=chatmi:"as"
    //JSON.parse(kas);
     //localStorage.setItem("mychart","Emty chart")
@@ -33,8 +31,12 @@ function App() {
   function sendmessage(){
 
   setChecker(1)
-  setMessage(message)
+ // setMessage(message)
  
+ var name1=localStorage.getItem("user")
+ //setNamec(name1)
+ setNamec(name1)
+ //console.log("loka",name1)
   
  
   const ras={newmessage:message}
@@ -65,14 +67,15 @@ useEffect(()=>{
 
 
   return (
-    <div className="App">
+    <div className="App" style={{ width:"410px",  height: "310px",overflow: "scroll",
+     position: 'fixed', left:0,bottom: 0, width: '100%',textAlign:'center'}}>
 
 <table align='center'>
 <tr><td><b>S/no</b></td><td><b>Message</b></td></tr>
 {history!=null ? <>
     {history.map((kii,index)=>(
-
-   <tr><td>{index  + 1}</td><td><b>{name}:</b><>{kii.newmessage}</></td></tr>   
+ 
+   <tr><td>{index  + 1}</td><td><b>{namec}:</b><>{kii.newmessage}</></td></tr>   
     ))}</> : ""
 }
 
@@ -85,7 +88,7 @@ useEffect(()=>{
 
        <input type='text'   onChange={(e)=> setMessage(e.target.value)}  /> 
       
-      <button onClick={sendmessage}>Send message</button>
+      <button onClick={sendmessage}>Send</button>
     
        </>}
        </td>
