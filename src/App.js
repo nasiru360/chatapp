@@ -5,7 +5,7 @@ import setAction from './Action'
 
 
 function App() {
-//  localStorage.clear()
+  //localStorage.clear()
   const jabi=localStorage.getItem("user");
   // alert(jabi)
   const projectlist=useSelector((state)=>state.chat);
@@ -14,6 +14,7 @@ function App() {
   const [message,setMessage]=useState("")
   const [history,setHistory]=useState([])
   const [checker,setChecker]=useState(0)
+  const [name,setName]=useState("")
 
     
 
@@ -22,7 +23,8 @@ function App() {
      // alert(uname)
     localStorage.setItem("user",uname)
 
-   
+    var name1=localStorage.getItem("user")
+    setName(name1)
   // const kas=chatmi:"as"
    //JSON.parse(kas);
     //localStorage.setItem("mychart","Emty chart")
@@ -70,7 +72,7 @@ useEffect(()=>{
 {history!=null ? <>
     {history.map((kii,index)=>(
 
-   <tr><td>{index  + 1}</td><td><>{kii.newmessage}</></td></tr>   
+   <tr><td>{index  + 1}</td><td><b>{name}:</b><>{kii.newmessage}</></td></tr>   
     ))}</> : ""
 }
 
