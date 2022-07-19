@@ -76,10 +76,10 @@ useEffect(()=>{
     {history.map((kii,index)=>(
  
    <tr><td>{index  + 1}</td><td><b>{namec}:</b><>{kii.newmessage}</></td></tr>   
-    ))}</> : ""
+    ))}</> : ""  
 }
 
-
+{/* ewef */}
    <tr><td></td><td>  {jabi==null ? <>Input your name:<input type='text'   onChange={(e)=> setUname(e.target.value)}  /> 
       
       <button onClick={savename}>Save</button>
