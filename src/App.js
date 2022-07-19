@@ -13,6 +13,7 @@ function App() {
   const [uname,setUname]=useState("")
   const [message,setMessage]=useState("")
   const [history,setHistory]=useState([])
+  const [checker,setChecker]=useState(0)
 
     
 
@@ -30,7 +31,7 @@ function App() {
   function sendmessage(){
   // alert(message)
 
-
+  setChecker(1)
 
   // setMessage ( prevState =>{
   //   return {
@@ -53,7 +54,7 @@ function App() {
   
   dispatch(setAction(kids))
    
-
+  setChecker(0)
       
  // console.log("kid:",kids)
 //  localStorage.setItem("mychart",JSON.stringify(kids))
@@ -79,20 +80,24 @@ useEffect(()=>{
   setHistory(projectlist)
  console.log("bili", history)
  
-},[message])
+},[checker])
 
 
 
   return (
     <div className="App">
 
+<table>
+<tr><td><b>S/no</b></td><td><b>Message</b></td></tr>
 {history!=null ? <>
-    {history.map((kii)=>(
+    {history.map((kii,index)=>(
 
-      <>{kii.newmessage}</>
+   <tr><td>{index  + 1}</td><td><>{kii.newmessage}</></td></tr>   
     ))}</> : ""
 }
-      {jabi==null ? <>Input your name:<input type='text'   onChange={(e)=> setUname(e.target.value)}  /> 
+
+
+   <tr><td></td><td>  {jabi==null ? <>Input your name:<input type='text'   onChange={(e)=> setUname(e.target.value)}  /> 
       
       <button onClick={savename}>Save</button>
        </> : <>
@@ -103,7 +108,9 @@ useEffect(()=>{
       <button onClick={sendmessage}>Send message</button>
     
        </>}
-   
+       </td>
+</tr> 
+       </table>
      </div>
   );
 }
