@@ -29,16 +29,8 @@ function App() {
   }
   const dispatch=useDispatch();  
   function sendmessage(){
-  // alert(message)
 
   setChecker(1)
-
-  // setMessage ( prevState =>{
-  //   return {
-  //     message
-  // }
-  // })
-
   setMessage(message)
  
   
@@ -46,28 +38,14 @@ function App() {
   const ras={newmessage:message}
   
 
-
-  
-
-  
   kids.push(ras);
   
   dispatch(setAction(kids))
-   
-  setChecker(0)
-      
- // console.log("kid:",kids)
-//  localStorage.setItem("mychart",JSON.stringify(kids))
-
-//setMessage("")
- // console.log(projectlist)
+ 
   }
   //console.log(localStorage.mychart)
 
 
-  const drecord=JSON.parse(localStorage.getItem("mychart"))
-//  setHistory(drecord)
- //console.log("lll",drecord )
 
  
 
