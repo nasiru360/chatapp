@@ -69,14 +69,14 @@ useEffect(()=>{
 
   return (
     <div className="App" style={{ backgroundColor: 'lightblue', width:'410px', height: 410,
-    overflow: 'scroll',  position: 'fixed', padding:'10px 10px 0px 10px',bottom:0}}>
+    overflow: 'scroll',  position: 'fixed',bottom:0}}>
 
 <table align='center' >
 <tr><td><b>Message</b></td></tr>
 {history!=null ? <div >
     {history.map((kii,index)=>(
  
-   <tr><td><b><img src={imgj}  style={{width:'50px', height:'50px', padding:'15px'}}/></b><>{kii.newmessage}</></td></tr>   
+   <tr><td><b><img src={imgj}  style={{width:'50px', height:'50px'}}/></b><>{kii.newmessage}</></td></tr>   
     ))}</div> : ""  
 }
 
@@ -87,7 +87,7 @@ useEffect(()=>{
        </> : <>
 
 
-       <input type='text'  style={{height:'50px', width:'250px', float:'left'}}  onChange={(e)=> setMessage(e.target.value)}  /> 
+       <input type='text'  style={{height:'50px', width:'250px'}}  onChange={(e)=> setMessage(e.target.value)}  /> 
       
       <button onClick={sendmessage}>Send</button>
     
