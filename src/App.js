@@ -1,5 +1,5 @@
 import './App.css';
-import * as React from 'react';
+import {useState,useEffect} from 'react';
 import { useSelector,useDispatch } from "react-redux";
 import setAction from './Action'
 
@@ -10,9 +10,9 @@ function App() {
   // alert(jabi)
   const projectlist=useSelector((state)=>state.chat);
   const chathistory={}
-  const [uname,setUname]=React.useState("")
-  const [message,setMessage]=React.useState("")
-  const [history,setHistory]=React.useState("")
+  const [uname,setUname]=useState("")
+  const [message,setMessage]=useState("")
+  const [history,setHistory]=useState([])
 
     
 
@@ -55,7 +55,7 @@ function App() {
    
 
       
-  console.log("kid:",kids)
+ // console.log("kid:",kids)
 //  localStorage.setItem("mychart",JSON.stringify(kids))
 
 //setMessage("")
@@ -71,7 +71,7 @@ function App() {
  
 
    
-React.useEffect(()=>{
+useEffect(()=>{
 
   // projectlist.map((dis)=>(
   //   console.log("Record",dis)
@@ -86,6 +86,12 @@ React.useEffect(()=>{
   return (
     <div className="App">
 
+{history!=null ? <>
+    {history.map((kii)=>(
+
+      <>{kii.newmessage}</>
+    ))}</> : ""
+}
       {jabi==null ? <>Input your name:<input type='text'   onChange={(e)=> setUname(e.target.value)}  /> 
       
       <button onClick={savename}>Save</button>
