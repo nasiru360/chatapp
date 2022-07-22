@@ -4,11 +4,7 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux'
-import myreducer from './Reducer'
-import setProject from './Action'
-
-const store=createStore(myreducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-store.dispatch(setProject())
+import store from './store'
 
 
 

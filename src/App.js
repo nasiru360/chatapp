@@ -23,7 +23,7 @@ function App() {
   function savename(){
      // alert(uname)
     localStorage.setItem("user",uname)
-
+    setChecker(1)
   // const kas=chatmi:"as"
    //JSON.parse(kas);
     //localStorage.setItem("mychart","Emty chart")
@@ -40,17 +40,17 @@ function App() {
  //console.log("loka",name1)
   
  
-  const ras={newmessage:message}
-  
+  const ras={name:name1,newmessage:message}
+
 
   kids.push(ras);
-  
+     localStorage.setItem("mylocalstorage",JSON.stringify(ras))
+   //  localStorage.setItem("mylocalstorage",ras)
   dispatch(setAction(kids))
  
   }
   //console.log(localStorage.mychart)
-
-
+//contains()
 
  
 
@@ -63,7 +63,7 @@ useEffect(()=>{
   setHistory(projectlist)
  console.log("bili", history)
  setChecker(0)
-},[checker])
+},[checker,uname])
 
 
 
